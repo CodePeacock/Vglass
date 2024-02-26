@@ -202,10 +202,7 @@ class FaceModel3D:
     # Glasses location point
     def __createGlasses(self, face):
         eye_mid = np.mean(face[28:34], axis=0)
-        eye_long = np.linalg.norm(face[31] - face[28]) / 2
-        eye_short = np.linalg.norm(face[30] - face[32]) / 2
         z_h = face[19][2]
-        ear = face[0]
         depth = self.__glasses_offset["depth"]
         # create glasses
         glasses = [
@@ -417,8 +414,6 @@ class FaceModel3D:
 
     def __perspectiveTransform(self, img, object_img, object_proj, fix_id):
         size = object_img.shape
-        max_g = np.argmax(object_img, axis=0)
-        min_g = np.argmin(object_img, axis=0)
         M = cv2.getPerspectiveTransform(
             np.float32([[0, 0], [0, size[0]], [size[1], 0], [size[1], size[0]]]),
             object_proj,

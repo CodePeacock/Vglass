@@ -159,3 +159,4 @@ cython_debug/
 #  option (not recommended) you can uncomment the following to ignore the entire idea folder.
 #.idea/
 /glasses/04_transparent
+/glasses/99_sexy
