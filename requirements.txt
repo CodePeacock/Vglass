@@ -3,3 +3,7 @@ dlib
 opencv-python
 scipy
 mediapipe
+opencv-contrib-python
+imutils
+pyclean
+moviepy
